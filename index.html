@@ -1,59 +1,691 @@
+
 <!DOCTYPE html>
-<html lang="en">
-<head>
+<html>
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AMORE</title>
+    <title>grapefruitplanet</title>
+    <!-- The style.css file allows you to change the look of your web pages.
+         If you include the next line in all your web pages, they will all share the same look.
+         This makes it easier to make new pages for your site. -->
+    <link href="/style.css" rel="stylesheet" type="text/css" media="all">
+    
     <style>
-        body {
-            background-color: black;
-            color: white;
-            font-family: "Courier New", monospace;
-            text-align: center;
+    
+      .aligned {
+        display: flex;
+        align-items: center;
+      }
+      
+      span {
+        padding: 10px;
+      }
+      
+      body {
+        animation: fadeInAnimation ease 3s;
+        animation-iteration-count: 1;
+        animation-fill-mode: forwards;
+      }
+      
+      h1 {
+        color: black;
+      }
+      
+      @keyframes fadeInAnimation {
+        0% {
+          opacity: 0;
         }
-        a {
-            color: red;
-            text-decoration: none;
-            margin: 0 10px;
+        
+        100% {
+          opacity: 1;
         }
-        .contract-address {
-            border: 2px solid red;
-            display: inline-block;
-            padding: 10px;
-            margin: 20px 0;
-            font-size: 16px;
-        }
-        .image {
-            display: block;
-            position: relative;
-            top: -35px;
-            margin: 20px auto;
-            transform: scale(3);
-        }
-        .info {
-            border: 1px solid white;
-            display: inline-block;
-            padding: 10px;
-        }
+      }
+    </style> 
+    
+    <style>
+      .popup-box {
+        position:fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        display: flex;
+        justify-content:center;
+        align-items: center;
+        z-index: 9999;
+      }
+      
+      .popup-content {
+        background-color: black;
+        padding: 20px;
+        border-radius: 0px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+      }
+      
+      .close-btn {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        cursor: pointer;
+      }
+      
+      .button {
+        background-color: #000000; 
+        border: 5px;
+        color: #ffffff;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+        font-family: "Visitor";
+        animation: color-change 1s infinite;
+      }
+      
+      @keyframes color-change {
+        0% { color: white; }
+        25% { color: red; }
+        50% { color: yellow; }
+        75% { color: red; }
+        100% { color: white; }
+      }
+      
     </style>
-</head>
-<body>
-    <h1>- + AMORE +-</h1>
-    <p>
-        <a href="#">twitter</a> | <a href="#">telegram</a> | <a href="#">pump.fun</a>
-    </p>
-    <div class="contract-address">
-        <p>CA:<br>EVubHe4vukghzs8YrTToBCeNT7PfUKc1VzzTbTfWpump</p>
-    </div>
-    <div class="image">
-        <img src="" alt="" width="50">
-    </div>
-    <h2>- + Amore info +-</h2>
-    <div class="info">
-        <video width="200" autoplay loop muted>
-            <source src="https://files.catbox.moe/bd14ns.webm" type="video/webm">
-            Your browser does not support the video tag.
-        </video>
-    </div>
-</body>
+    
+  </head>
+  
+  
+  <body>
+        
+        
+      
+    
+        <audio  autoplay loop>
+         <source src="https://grapefruitpla.net/audio/goldfish.mp3"  type="audio/mp3">
+        your browser is unable to play this audio :'(
+        </audio>
+
+        <div id="container">
+            <div id="headerArea">
+                
+                
+            </div>
+
+            <div id="flex">
+                
+                <main>
+                
+                    <h1 style="text-align:center;font-size:20px"><b><em>-+ grapefruit planet +-</em></b></h1>
+                    
+                    <center> <nav>
+                    <a href="https://grapefruitpla.net/portfolio">portfolio</a> |
+                    <a href="https://grapefruitpla.net/">home</a> |
+                    <a href="https://grapefruitpla.net/about">about me</a>
+                    </nav> </center>
+                    
+                    
+                    <center>
+                    
+                    <br><table border=0 cellpadding=4 cellspacing=0 width=450 style="border: 3pt; border-style: solid; border-color: #ff0000" bgcolor=#000000><tr><td>
+                    
+                    <center> <p><b>Welcome to my website!!!!</b> </center>
+                    
+                    
+                    
+                    </td></tr>
+                    </table>
+                    </center>
+                    
+                    
+                    <center> <IMG SRC="https://grapefruitpla.net/boils/gfp.gif"
+                      width="200"
+                      height= auto
+                      /> </center>
+                      
+                    
+                    <center> <button id="popup-btn" class="button" font="Visitor">-+ site info +-</button>
+                    <div id="popup-container"></div> </center>
+                    
+                    
+                    <script>
+                      document.getElementById('popup-btn').addEventListener('click',
+                    function() {
+                      var popupContainer = document.getElementById('popup-container');
+                      var popupBox = document.createElement('div');
+                      var closeButton = document.createElement('span');
+                      
+                      popupBox.className = 'popup-box';
+                      popupBox.innerHTML = '<div class="popup-content">This site was made using Neocities and Firefox. It is compatible with mobile (for the most part) but works the best on desktop, as automatic resolution setting and audio does not work on anything but desktop Firefox as far as I am aware. </div>';
+                      closeButton.className = 'close-btn';
+                      closeButton.innerHTML = '&times;';
+                      
+                      popupBox.appendChild(closeButton);
+                      popupContainer.appendChild(popupBox);
+                      
+                      closeButton.addEventListener('click', function() {
+                        popupContainer.removeChild(popupBox);
+                      });
+                    });
+                  </script>
+                  
+                  
+
+                    
+                    
+                    
+                    
+                    <center>
+                    <br><table border=0 cellpadding=4 cellspacing=0 width=300 style="border: 3pt; border-style: solid; border-color: #FFFFFF" bgcolor=#000000><tr><td>
+                    
+                    <center> <IMG SRC="https://grapefruitpla.net/boils/brenbren3plus.gif"
+                      width="300"
+                      height= auto
+                      /> </center>
+                    
+                    
+                    </td></tr>
+                    </table>
+                    </center>
+                    
+                   
+                    <center>
+                    
+                    <br><table border=0 cellpadding=4 cellspacing=0 width=500 style="border: 3pt; border-style: solid; border-color: #ff0000" bgcolor=#000000><tr><td>
+                    
+                    <center> <p><b>Welcome to grapefruitplanet; this website will serve as a compendium/collection of all of my presentable works available. Please feel free to look around the website for more information!</b> </center>
+                    
+                    
+                    
+                    </td></tr>
+                    </table>
+                    </center>
+                    
+                    
+                    
+                </main>
+                
+            </div>
+            
+        </div>
+        <!-- THIS IS THE CSS !-->
+        <style>
+            /* user styles */
+
+            /* styles are what change the color and sizes of stuff on your site. */
+
+            /* these are variables that are being used in the code
+    these tended to confuse some people, so I only kept 
+    the images as variables */
+
+            :root {
+                --header-image: url('https://grapefruitpla.net/1920x1080-black-solid-color-background.jpg');
+                --body-bg-image: url('https://grapefruitpla.net/1920x1080-black-solid-color-background.jpg');
+
+                /* colors */
+                --content: #000000;
+            }
+
+            /* if you have the URL of a font, you can set it below */
+            /* feel free to delete this if it's not your vibe */
+
+            /* this seems like a lot for just one font and I would have to agree 
+    but I wanted to include an example of how to include a custom font.
+    If you download a font file you can upload it onto your Neocities
+    and then link it! Many fonts have separate files for each style
+    (bold, italic, etc. T_T) which is why there are so many!
+    
+    */
+
+            @font-face {
+                font-family: Visitor;
+                src: url('https://grapefruitpla.net/PressStart2P-Regular.ttf');
+            }
+
+            @font-face {
+                font-family: Visitor;
+                src: url('https://grapefruitpla.net/PressStart2P-Regular.ttf');
+                font-weight: bold;
+            }
+
+            @font-face {
+                font-family: Visitor;
+                src: url('https://grapefruitpla.net/PressStart2P-Regular.ttf');
+                font-style: italic;
+            }
+
+            @font-face {
+                font-family: Visitor;
+                src: url('https://grapefruitpla.net/PressStart2P-Regular.ttf');
+                font-style: italic;
+                font-weight: bold;
+            }
+
+            body {
+                font-family: 'Visitor', sans-serif;
+                margin: 0;
+                background-color: #ffffff;
+                /* you can delete the line below if you'd prefer to not use an image */
+                background-size: 65px;
+                color: #ffffff;
+                background-image: var(--body-bg-image);
+            }
+
+            * {
+                box-sizing: border-box;
+            }
+
+            /* below this line is CSS for the layout */
+
+            /* this is a CSS comment
+    to uncomment a line of CSS, remove the * and the /
+    before and after the text */
+
+
+            /* the "container" is what wraps your entire website */
+            /* if you want something (like the header) to be Wider than
+    the other elements, you will need to move that div outside
+    of the container */
+            #container {
+                max-width: 900px;
+                /* this is the width of your layout! */
+                /* if you change the above value, scroll to the bottom
+      and change the media query according to the comment! */
+                margin: 0 auto;
+                /* this centers the entire page */
+            }
+
+            /* the area below is for all links on your page
+    EXCEPT for the navigation */
+            #container a {
+                color: #ff0000;
+                font-weight: bold;
+                /* if you want to remove the underline
+      you can add a line below here that says:
+      text-decoration:none; */
+            }
+
+            #header {
+                width: 100%;
+                background-color: #000000;
+                /* header color here! */
+                height: 150px;
+                /* this is only for a background image! */
+                /* if you want to put images IN the header, 
+      you can add them directly to the <div id="header"></div> element! */
+                background-image: var(--header-image);
+                background-size: 100%;
+            }
+
+            /* navigation section!! */
+            #navbar {
+                height: 40px;
+                background-color: #000000;
+                /* navbar color */
+                width: 100%;
+            }
+
+            #navbar ul {
+                display: flex;
+                padding: 0;
+                margin: 0;
+                list-style-type: none;
+                justify-content: space-evenly;
+            }
+
+            #navbar li {
+                padding-top: 10px;
+            }
+
+            /* navigation links*/
+            #navbar li a {
+                color: #ff0000;
+                /* navbar text color */
+                font-weight: 800;
+                text-decoration: none;
+                /* this removes the underline */
+            }
+
+            /* navigation link when a link is hovered over */
+            #navbar li a:hover {
+                color: #ff0000;
+                text-decoration: underline;
+            }
+
+            #flex {
+                display: flex;
+            }
+
+            /* this colors BOTH sidebars
+    if you want to style them separately,
+    create styles for #leftSidebar and #rightSidebar */
+            aside {
+                background-color: #000000;
+                width: 200px;
+                padding: 20px;
+                font-size: smaller;
+                /* this makes the sidebar text slightly smaller */
+            }
+
+
+            /* this is the color of the main content area,
+    between the sidebars! */
+            main {
+                background-color: #000000;
+                flex: 1;
+                padding: 20px;
+                order: 2;
+            }
+
+            /* what's this "order" stuff about??
+    allow me to explain!
+    if you're using both sidebars, the "order" value
+    tells the CSS the order in which to display them.
+    left sidebar is 1, content is 2, and right sidebar is 3! */
+
+            */ #leftSidebar {
+                order: 1;
+            }
+
+            #rightSidebar {
+                order: 3;
+            }
+
+            footer {
+                background-color: #ff0000;
+                /* background color for footer */
+                width: 100%;
+                height: 40px;
+                padding: 10px;
+                text-align: center;
+                /* this centers the footer text */
+            }
+
+            h1,
+            h2,
+            h3 {
+                color: #ffffff;
+            }
+
+            h1 {
+                font-size: 25px;
+            }
+
+            strong {
+                /* this styles bold text */
+                color: #ffffff;
+            }
+
+            /* this is just a cool box, it's the darker colored one */
+            .box {
+                background-color: #000000;
+                border: 1px solid #ffffff;
+                padding: 10px;
+            }
+
+            /* CSS for extras */
+
+            #topBar {
+                width: 100%;
+                height: 30px;
+                padding: 10px;
+                font-size: smaller;
+                background-color: #000000;
+            }
+
+
+            /* BELOW THIS POINT IS MEDIA QUERY */
+
+            /* so you wanna change the width of your page? 
+    by default, the container width is 900px.
+    in order to keep things responsive, take your new height,
+    and then subtrack it by 100. use this new number as the 
+    "max-width" value below
+    */
+
+            @media only screen and (max-width: 800px) {
+                #flex {
+                    flex-wrap: wrap;
+                }
+
+                aside {
+                    width: 100%;
+                }
+
+                /* the order of the items is adjusted here for responsiveness!
+      since the sidebars would be too small on a mobile device.
+      feel free to play around with the order!
+      */
+                main {
+                    order: 1;
+                }
+
+                #leftSidebar {
+                    order: 2;
+                }
+
+                #rightSidebar {
+                    order: 3;
+                }
+
+                #navbar ul {
+                    flex-wrap: wrap;
+                }
+            }
+        </style>
+
+
+
+
+        <style>
+          #snowflakeContainer {
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            display: none;
+          }
+        
+          .snowflake {
+            position: fixed;
+            user-select: none;
+            z-index: 1000;
+            pointer-events: none;
+            width: 7px;
+          }
+          
+        </style>
+        <div id="snowflakeContainer">
+          <img class="snowflake" src="https://grapefruitpla.net/media/tiny-whitey.png">
+        </div>
+        
+        <script>
+          // Array to store our Snowflake objects
+          let snowflakes = [];
+        
+          // Global variables to store our browser's window size
+          let browserWidth;
+          let browserHeight;
+        
+          // Specify the number of snowflakes you want visible
+          let numberOfSnowflakes = 50;
+        
+          // Flag to reset the position of the snowflakes
+          let resetPosition = false;
+        
+          // Handle accessibility
+          let enableAnimations = false;
+          let reduceMotionQuery = matchMedia("(prefers-reduced-motion)");
+        
+          // Handle animation accessibility preferences
+          function setAccessibilityState() {
+            if (reduceMotionQuery.matches) {
+              enableAnimations = false;
+            } else {
+              enableAnimations = true;
+            }
+          }
+          setAccessibilityState();
+        
+          reduceMotionQuery.addListener(setAccessibilityState);
+        
+          //
+          // It all starts here...
+          //
+          function setup() {
+            if (enableAnimations) {
+              window.addEventListener("DOMContentLoaded", generateSnowflakes, false);
+              window.addEventListener("resize", setResetFlag, false);
+            }
+          }
+          setup();
+        
+          //
+          // Constructor for our Snowflake object
+          //
+          class Snowflake {
+            constructor(element, speed, xPos, yPos) {
+              // set initial snowflake properties
+              this.element = element;
+              this.speed = speed;
+              this.xPos = xPos;
+              this.yPos = yPos;
+              this.scale = 1;
+        
+              // declare variables used for snowflake's motion
+              this.counter = 0;
+              this.sign = Math.random() < 0.5 ? 1 : -1;
+        
+              // setting an initial opacity and size for our snowflake
+              this.element.style.opacity = (0.1 + Math.random()) / 3;
+            }
+        
+            // The function responsible for actually moving our snowflake
+            update(delta) {
+              // using some trigonometry to determine our x and y position
+              this.counter += (this.speed / 5000) * delta;
+              this.xPos += (this.sign * delta * this.speed * Math.cos(this.counter)) / 40;
+              this.yPos += Math.sin(this.counter) / 40 + (this.speed * delta) / 30;
+              this.scale = 0.5 + Math.abs((10 * Math.cos(this.counter)) / 20);
+        
+              // setting our snowflake's position
+              setTransform(
+                Math.round(this.xPos),
+                Math.round(this.yPos),
+                this.scale,
+                this.element
+              );
+        
+              // if snowflake goes below the browser window, move it back to the top
+              if (this.yPos > browserHeight) {
+                this.yPos = -50;
+              }
+            }
+          }
+        
+          //
+          // A performant way to set your snowflake's position and size
+          //
+          function setTransform(xPos, yPos, scale, el) {
+            el.style.transform = `translate3d(${xPos}px, ${yPos}px, 0) scale(${scale}, ${scale})`;
+          }
+        
+          //
+          // The function responsible for creating the snowflake
+          //
+          function generateSnowflakes() {
+            // get our snowflake element from the DOM and store it
+            let originalSnowflake = document.querySelector(".snowflake");
+        
+            // access our snowflake element's parent container
+            let snowflakeContainer = originalSnowflake.parentNode;
+            snowflakeContainer.style.display = "block";
+        
+            // get our browser's size
+            browserWidth = document.documentElement.clientWidth;
+            browserHeight = document.documentElement.clientHeight;
+        
+            // create each individual snowflake
+            for (let i = 0; i < numberOfSnowflakes; i++) {
+              // clone our original snowflake and add it to snowflakeContainer
+              let snowflakeClone = originalSnowflake.cloneNode(true);
+              snowflakeContainer.appendChild(snowflakeClone);
+        
+              // set our snowflake's initial position and related properties
+              let initialXPos = getPosition(50, browserWidth);
+              let initialYPos = getPosition(50, browserHeight);
+              let speed = (5 + Math.random() * 40) * delta;
+        
+              // create our Snowflake object
+              let snowflakeObject = new Snowflake(
+                snowflakeClone,
+                speed,
+                initialXPos,
+                initialYPos
+              );
+              snowflakes.push(snowflakeObject);
+            }
+        
+            // remove the original snowflake because we no longer need it visible
+            snowflakeContainer.removeChild(originalSnowflake);
+        
+            requestAnimationFrame(moveSnowflakes);
+          }
+        
+          //
+          // Responsible for moving each snowflake by calling its update function
+          //
+          let frames_per_second = 60;
+          let frame_interval = 1000 / frames_per_second;
+        
+          let previousTime = performance.now();
+          let delta = 1;
+        
+          function moveSnowflakes(currentTime) {
+            delta = (currentTime - previousTime) / frame_interval;
+        
+            if (enableAnimations) {
+              for (let i = 0; i < snowflakes.length; i++) {
+                let snowflake = snowflakes[i];
+                snowflake.update(delta);
+              }
+            }
+        
+            previousTime = currentTime;
+        
+            // Reset the position of all the snowflakes to a new value
+            if (resetPosition) {
+              browserWidth = document.documentElement.clientWidth;
+              browserHeight = document.documentElement.clientHeight;
+        
+              for (let i = 0; i < snowflakes.length; i++) {
+                let snowflake = snowflakes[i];
+        
+                snowflake.xPos = getPosition(50, browserWidth);
+                snowflake.yPos = getPosition(50, browserHeight);
+              }
+        
+              resetPosition = false;
+            }
+        
+            requestAnimationFrame(moveSnowflakes);
+          }
+        
+          //
+          // This function returns a number between (maximum - offset) and (maximum + offset)
+          //
+          function getPosition(offset, size) {
+            return Math.round(-1 * offset + Math.random() * (size + 2 * offset));
+          }
+        
+          //
+          // Trigger a reset of all the snowflakes' positions
+          //
+          function setResetFlag(e) {
+            resetPosition = true;
+          }
+        </script>
+
+  </body>
 </html>
